@@ -241,7 +241,8 @@ public class JwtTokenProvider {
      * @return Jws object
      */
     private Jws<Claims> parseToken(final String token) {
-        return Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token);
+//        return Jwts.parserBuilder().setSigningKey(getSigningKey()).build().parseClaimsJws(token);
+        return Jwts.parser().setSigningKey(getSigningKey()).build().parseClaimsJws(token);
     }
 
     /**

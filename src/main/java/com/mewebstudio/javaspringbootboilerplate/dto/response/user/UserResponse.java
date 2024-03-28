@@ -31,12 +31,20 @@ public class UserResponse extends AbstractBaseResponse {
     private String email;
 
     @Schema(
-        name = "name",
-        description = "Name of the user",
+        name = "username",
+        description = "username",
         type = "String",
-        example = "John"
+        example = "JohnD"
     )
-    private String name;
+    private String username;
+
+    @Schema(
+            name = "firstName",
+            description = "User's FirstName ",
+            type = "String",
+            example = "John"
+    )
+    private String firstName;
 
     @Schema(
         name = "lastName",
@@ -45,6 +53,22 @@ public class UserResponse extends AbstractBaseResponse {
         example = "DOE"
     )
     private String lastName;
+
+    @Schema(
+            name = "dateOfBirth",
+            description = "User's Date of Birth ",
+            type = "String",
+            example = "1/1/1980"
+    )
+    private String dateOfBirth;
+
+    @Schema(
+            name = "gender",
+            description = "User's Gender ",
+            type = "String",
+            example = "Male"
+    )
+    private String gender;
 
     @Schema(
         name = "roles",
@@ -95,8 +119,11 @@ public class UserResponse extends AbstractBaseResponse {
         return UserResponse.builder()
             .id(user.getId().toString())
             .email(user.getEmail())
-            .name(user.getName())
+            .username(user.getUsername())
+            .firstName(user.getFirstName())
             .lastName(user.getLastName())
+            .dateOfBirth(user.getDateOfBirth())
+            .gender(user.getGender())
             .roles(user.getRoles().stream().map(role -> role.getName().name()).toList())
             .emailVerifiedAt(user.getEmailVerifiedAt())
             .blockedAt(user.getBlockedAt())

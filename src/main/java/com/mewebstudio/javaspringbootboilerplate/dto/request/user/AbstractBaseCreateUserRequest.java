@@ -53,13 +53,24 @@ public abstract class AbstractBaseCreateUserRequest {
     @NotBlank(message = "{not_blank}")
     @Size(max = 50, message = "{max_length}")
     @Schema(
-        name = "name",
-        description = "Name of the user",
+        name = "username",
+        description = "User's userName",
         type = "String",
         requiredMode = Schema.RequiredMode.REQUIRED,
-        example = "John"
+        example = "JohnD"
     )
-    private String name;
+    private String username;
+
+    @NotBlank(message = "{not_blank}")
+    @Size(max = 50, message = "{max_length}")
+    @Schema(
+            name = "firstName",
+            description = "User's first Name",
+            type = "String",
+            requiredMode = Schema.RequiredMode.REQUIRED,
+            example = "John"
+    )
+    private String firstName;
 
     @NotBlank(message = "{not_blank}")
     @Size(max = 50, message = "{max_length}")
@@ -71,4 +82,26 @@ public abstract class AbstractBaseCreateUserRequest {
         example = "DOE"
     )
     private String lastName;
+
+    @NotBlank(message = "{not_blank}")
+    @Size(max = 50, message = "{max_length}")
+    @Schema(
+            name = "dateOfBirth",
+            description = "User's Date of Birth",
+            type = "String",
+            requiredMode = Schema.RequiredMode.REQUIRED,
+            example = "1/1/1980"
+    )
+    private String dateOfBirth;
+
+    @NotBlank(message = "{not_blank}")
+    @Size(max = 50, message = "{max_length}")
+    @Schema(
+            name = "gender",
+            description = "User's Gender",
+            type = "String",
+            requiredMode = Schema.RequiredMode.REQUIRED,
+            example = "Male"
+    )
+    private String gender;
 }
