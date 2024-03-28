@@ -11,7 +11,8 @@
     <groupId>com.mewebstudio</groupId>
     <artifactId>java-spring-boot-boilerplate</artifactId>
     <version>0.0.2</version>
-    <name>java-spring-boot-boilerplate</name>
+<!--    <name>java-spring-boot-boilerplate</name>-->
+    <name>java-spring-boot-boilerplate-fork</name>
     <description>Java Spring Boot Boilerplate (Spring Boot 3)</description>
     <properties>
         <java.version>21</java.version>
@@ -109,10 +110,6 @@
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
-        </dependency>
-        <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
             <version>${jjwt-version}</version>
@@ -192,6 +189,23 @@
             <version>${instancio-version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- to fix the tests running locally in IDE when behind a vpn/proxy -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -231,7 +245,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin
+            </plugin>
             <!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-maven-plugin -->
             <plugin>
                 <groupId>org.liquibase</groupId>
