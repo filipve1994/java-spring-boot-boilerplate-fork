@@ -114,9 +114,10 @@ logging:
       springframework:
         web: ${LOGGING_LEVEL_SPRING:INFO}
   file:
-    name: ./var/logs/app.log
+    name: ${LOG_FILE_NAME:./var/logs/${spring.application.name}.log}
   pattern:
     file: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n'
   logback:
     rollingpolicy:
-      file-name-pattern: ./var/logs/app.%d{yyyy-MM-dd}.%i.log
+#      file-name-pattern: ./var/logs/app.%d{yyyy-MM-dd}.%i.log
+      file-name-pattern: ${LOG_FILE_NAME_PATTERN:./var/logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log}
