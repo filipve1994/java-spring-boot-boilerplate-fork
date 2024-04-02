@@ -26,7 +26,7 @@
         <commons-validator-version>1.7</commons-validator-version>
         <!-- https://mvnrepository.com/artifact/org.passay/passay -->
         <passay.version>1.6.4</passay.version>
-        <swagger.version>2.4.0</swagger.version>
+        <swagger.version>2.5.0</swagger.version>
         <!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
         <liquibase.version>4.24.0</liquibase.version>
         <!-- https://mvnrepository.com/artifact/org.liquibase.ext/liquibase-hibernate6 -->
